@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadoop · Ôn tập trắc nghiệm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0f1524;
+    --bg-alt: #131a2c;
+    --surface: #1a2338;
+    --surface-2: #212c46;
+    --line: #2b3654;
+    --text: #eef1f8;
+    --text-dim: #97a1bf;
+    --text-faint: #5d6789;
+    --amber: #e8a33d;
+    --amber-dim: #6b5326;
+    --green: #4fae7a;
+    --green-dim: #234432;
+    --red: #d9584f;
+    --red-dim: #4a2624;
+    --blue-node: #5b7fd9;
+    --radius: 14px;
+    --shadow: 0 20px 50px -20px rgba(0,0,0,0.55);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1100px 600px at 15% -10%, #17203a 0%, transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, #182142 0%, transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter', system-ui, sans-serif;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .display{font-family:'Sora', sans-serif;}
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:36px 20px 80px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+  }
+  .brand-eyebrow{
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    font-weight:600;
+    margin:0 0 6px;
+  }
+  h1{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size:clamp(24px,4vw,32px);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    color:var(--text-dim);
+    font-size:14px;
+    margin-top:6px;
+  }
+  .cluster-id{
+    text-align:right;
+    color:var(--text-faint);
+    font-size:12px;
+    line-height:1.6;
+  }
+  .cluster-id b{color:var(--text-dim); font-weight:600;}
+
+  /* ---------- cluster / block map (signature element) ---------- */
+  .cluster-panel{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 18px 16px;
+    margin-bottom:22px;
+    box-shadow:var(--shadow);
+  }
+  .cluster-panel-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+  }
+  .cluster-panel-head .label{
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--text-faint);
+    font-weight:600;
+  }
+  .legend{
+    display:flex;
+    gap:14px;
+    font-size:11px;
+    color:var(--text-dim);
+  }
+  .legend span{display:inline-flex; align-items:center; gap:5px;}
+  .legend i{width:8px;height:8px;border-radius:2px;display:inline-block;}
+  .blockmap{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(15px,1fr));
+    gap:4px;
+  }
+  .blk{
+    aspect-ratio:1;
+    border-radius:3px;
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .blk.correct{background:var(--green); border-color:var(--green);}
+  .blk.wrong{background:var(--red); border-color:var(--red);}
+  .blk.current{
+    border-color:var(--amber);
+    box-shadow:0 0 0 2px rgba(232,163,61,0.25);
+    transform:scale(1.15);
+  }
+
+  .statline{
+    display:flex;
+    gap:22px;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px dashed var(--line);
+    flex-wrap:wrap;
+  }
+  .stat{font-size:13px; color:var(--text-dim);}
+  .stat b{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--text);
+    font-weight:600;
+    font-size:14px;
+  }
+  .stat.ok b{color:var(--green);}
+  .stat.bad b{color:var(--red);}
+
+  /* ---------- controls ---------- */
+  .controls{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+  }
+  .btn-ctl{
+    background:var(--surface);
+    border:1px solid var(--line);
+    color:var(--text-dim);
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:500;
+    padding:8px 14px;
+    border-radius:9px;
+    cursor:pointer;
+    transition:all .15s ease;
+    display:flex;
+    align-items:center;
+    gap:7px;
+  }
+  .btn-ctl:hover{border-color:var(--amber); color:var(--text);}
+  .btn-ctl.active{
+    border-color:var(--amber);
+    color:var(--amber);
+    background:rgba(232,163,61,0.08);
+  }
+
+  /* ---------- card ---------- */
+  .card{
+    background:linear-gradient(180deg, var(--surface) 0%, var(--bg-alt) 100%);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:32px clamp(20px,4vw,40px) 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:linear-gradient(90deg, var(--amber), var(--blue-node));
+    opacity:.7;
+  }
+  .qmeta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+  }
+  .qnum{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--amber);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+  .qnum span{color:var(--text-faint);}
+  .status-pill{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    padding:3px 9px;
+    border-radius:20px;
+    border:1px solid var(--line);
+    color:var(--text-faint);
+  }
+  .status-pill.ok{color:var(--green); border-color:var(--green-dim); background:rgba(79,174,122,0.08);}
+  .status-pill.bad{color:var(--red); border-color:var(--red-dim); background:rgba(217,88,79,0.08);}
+
+  .question{
+    font-family:'Sora', sans-serif;
+    font-size:clamp(19px,2.6vw,23px);
+    font-weight:600;
+    line-height:1.45;
+    margin:0 0 26px;
+    color:var(--text);
+  }
+
+  .options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .opt{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    text-align:left;
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    line-height:1.5;
+    padding:13px 15px;
+    border-radius:11px;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease, transform .1s ease;
+  }
+  .opt:hover:not(.locked){border-color:var(--blue-node); transform:translateX(2px);}
+  .opt .letter{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:12px;
+    color:var(--text-faint);
+    border:1px solid var(--line);
+    border-radius:6px;
+    width:22px;
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    margin-top:1px;
+  }
+  .opt.selected{border-color:var(--blue-node); background:rgba(91,127,217,0.10);}
+  .opt.reveal-correct{border-color:var(--green); background:rgba(79,174,122,0.12);}
+  .opt.reveal-correct .letter{background:var(--green); color:#0f1524; border-color:var(--green);}
+  .opt.reveal-wrong{border-color:var(--red); background:rgba(217,88,79,0.12);}
+  .opt.reveal-wrong .letter{background:var(--red); color:#0f1524; border-color:var(--red);}
+  .opt.locked{cursor:default;}
+  .opt.dim{opacity:.5;}
+
+  .card-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:26px;
+    min-height:38px;
+  }
+  .hint{
+    font-size:12px;
+    color:var(--text-faint);
+    font-family:'JetBrains Mono', monospace;
+  }
+  .hint kbd{
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 6px;
+    font-family:'JetBrains Mono', monospace;
+  }
+  .nav-btns{display:flex; gap:8px;}
+  .btn-main{
+    font-family:'Sora', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    padding:10px 20px;
+    border-radius:10px;
+    border:1px solid var(--amber);
+    background:var(--amber);
+    color:#1a1305;
+    cursor:pointer;
+    transition:filter .15s ease, transform .1s ease;
+  }
+  .btn-main:hover{filter:brightness(1.08);}
+  .btn-main:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+    filter:none;
+  }
+  .btn-ghost{
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+    font-size:13px;
+    padding:10px 16px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--text-dim);
+    cursor:pointer;
+  }
+  .btn-ghost:hover{border-color:var(--text-dim); color:var(--text);}
+
+  /* ---------- finished state ---------- */
+  .finish{
+    text-align:center;
+    padding:20px 0 6px;
+  }
+  .finish .big{
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:44px;
+    color:var(--amber);
+  }
+  .finish p{color:var(--text-dim); font-size:14px;}
+
+  footer{
+    text-align:center;
+    color:var(--text-faint);
+    font-size:12px;
+    margin-top:30px;
+  }
+
+  @media (max-width:520px){
+    .blockmap{grid-template-columns:repeat(auto-fill, minmax(12px,1fr));}
+    .card-footer{flex-direction:column; align-items:stretch; gap:14px;}
+    .nav-btns{justify-content:stretch;}
+    .nav-btns button{flex:1;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+
+  :focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <p class="brand-eyebrow">HDFS · Cluster Review</p>
+      <h1>Hadoop — Ôn tập trắc nghiệm</h1>
+      <p class="subtitle">128 câu hỏi · mỗi câu là một block trong cụm</p>
+    </div>
+    <div class="cluster-id mono">
+      NAMENODE: <b>local-session</b><br>
+      REPLICATION: <b>x1 (trình duyệt)</b>
+    </div>
+  </header>
+
+  <div class="cluster-panel">
+    <div class="cluster-panel-head">
+      <span class="label mono">Block Map — trạng thái 128 block</span>
+      <div class="legend">
+        <span><i style="background:var(--surface-2);border:1px solid var(--line)"></i>Chưa học</span>
+        <span><i style="background:var(--green)"></i>Đúng</span>
+        <span><i style="background:var(--red)"></i>Sai</span>
+      </div>
+    </div>
+    <div class="blockmap" id="blockmap"></div>
+    <div class="statline">
+      <div class="stat">Đã học <b id="statSeen">0</b>/<span id="statTotal">128</span></div>
+      <div class="stat ok">Đúng <b id="statCorrect">0</b></div>
+      <div class="stat bad">Sai <b id="statWrong">0</b></div>
+      <div class="stat">Độ chính xác <b id="statAcc">—</b></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn-ctl" id="btnShuffle" title="Trộn thứ tự câu hỏi">⇄ Trộn câu hỏi</button>
+    <button class="btn-ctl" id="btnReview" title="Chỉ ôn lại các câu đã trả lời sai">☆ Chỉ ôn câu sai</button>
+    <button class="btn-ctl" id="btnReset" title="Xoá toàn bộ tiến trình">↺ Reset tiến trình</button>
+  </div>
+
+  <div class="card" id="cardArea"></div>
+
+  <footer>Tiến trình được lưu tự động trên trình duyệt này (localStorage) · Phím tắt: 1–4 chọn đáp án · Enter/Space sang câu tiếp theo</footer>
+</div>
+
+<script>
+const STORAGE_KEY = 'hadoop_flashcards_progress_v1';
+let ALL = [];
+let order = [];
+let pos = 0;
+let progress = {};
+let reviewMode = false;
+let currentSelection = null;
+
+function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    progress = raw ? JSON.parse(raw) : {};
+  }catch(e){ progress = {}; }
+}
+function saveProgress(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }catch(e){}
+}
+
+function baseOrder(){ return ALL.map(q => q.id); }
+
+function buildOrder(){
+  let ids = reviewMode
+    ? ALL.filter(q => progress[q.id] === 'wrong').map(q => q.id)
+    : baseOrder();
+  order = ids;
+  pos = 0;
+}
+
+function shuffleOrder(){
+  for(let i = order.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i+1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  pos = 0;
+  render();
+}
+
+function qById(id){ return ALL.find(q => q.id === id); }
+
+function renderBlockmap(){
+  const map = document.getElementById('blockmap');
+  map.innerHTML = '';
+  const currentId = order[pos];
+  ALL.forEach(q => {
+    const d = document.createElement('div');
+    d.className = 'blk';
+    const st = progress[q.id];
+    if(st === 'correct') d.className += ' correct';
+    else if(st === 'wrong') d.className += ' wrong';
+    if(q.id === currentId) d.className += ' current';
+    d.title = 'Câu ' + q.id;
+    map.appendChild(d);
+  });
+  updateStats();
+}
+
+function updateStats(){
+  const seen = Object.keys(progress).length;
+  const correct = Object.values(progress).filter(v => v === 'correct').length;
+  const wrong = Object.values(progress).filter(v => v === 'wrong').length;
+  document.getElementById('statSeen').textContent = seen;
+  document.getElementById('statTotal').textContent = ALL.length;
+  document.getElementById('statCorrect').textContent = correct;
+  document.getElementById('statWrong').textContent = wrong;
+  document.getElementById('statAcc').textContent = seen ? Math.round(correct/seen*100) + '%' : '—';
+}
+
+function render(){
+  const area = document.getElementById('cardArea');
+  currentSelection = null;
+
+  if(order.length === 0){
+    area.innerHTML = `
+      <div class="finish">
+        <div class="big">☆</div>
+        <p>${reviewMode ? 'Không còn câu nào cần ôn lại — làm tốt lắm!' : 'Chưa có dữ liệu câu hỏi.'}</p>
+      </div>`;
+    renderBlockmap();
+    return;
+  }
+
+  if(pos >= order.length){
+    const correct = Object.values(progress).filter(v => v === 'correct').length;
+    const seen = Object.keys(progress).length;
+    area.innerHTML = `
+      <div class="finish">
+        <div class="big">✓ Hoàn thành</div>
+        <p>Bạn đã đi qua ${order.length} block trong lượt này.</p>
+        <p class="mono">Tổng: ${correct}/${seen} đúng (${seen ? Math.round(correct/seen*100):0}%)</p>
+        <div class="controls" style="justify-content:center;margin-top:18px;">
+          <button class="btn-main" id="btnAgain">Học lại từ đầu</button>
+        </div>
+      </div>`;
+    document.getElementById('btnAgain').onclick = () => { buildOrder(); render(); };
+    renderBlockmap();
+    return;
+  }
+
+  const q = qById(order[pos]);
+  const letters = Object.keys(q.options);
+  const priorStatus = progress[q.id];
+
+  area.innerHTML = `
+    <div class="qmeta">
+      <span class="qnum">CÂU ${String(q.id).padStart(3,'0')} <span>/ ${String(ALL.length).padStart(3,'0')}</span></span>
+      ${priorStatus ? `<span class="status-pill ${priorStatus === 'correct' ? 'ok' : 'bad'}">${priorStatus === 'correct' ? 'Đã trả lời đúng' : 'Đã trả lời sai'}</span>` : ''}
+    </div>
+    <p class="question">${escapeHtml(q.question)}</p>
+    <div class="options" id="optionsBox">
+      ${letters.map(l => `
+        <button class="opt" data-letter="${l}">
+          <span class="letter">${l}</span>
+          <span>${escapeHtml(q.options[l])}</span>
+        </button>
+      `).join('')}
+    </div>
+    <div class="card-footer">
+      <span class="hint">Phím: <kbd>1</kbd>-<kbd>${letters.length}</kbd> chọn · <kbd>Enter</kbd> tiếp</span>
+      <div class="nav-btns">
+        <button class="btn-ghost" id="btnSkip">Bỏ qua</button>
+        <button class="btn-main" id="btnNext" disabled>Câu tiếp theo →</button>
+      </div>
+    </div>
+  `;
+
+  document.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => selectOption(q, btn.dataset.letter));
+  });
+  document.getElementById('btnNext').addEventListener('click', nextCard);
+  document.getElementById('btnSkip').addEventListener('click', nextCard);
+
+  renderBlockmap();
+}
+
+function selectOption(q, letter){
+  if(currentSelection) return;
+  currentSelection = letter;
+  const isCorrect = letter === q.answer;
+  progress[q.id] = isCorrect ? 'correct' : 'wrong';
+  saveProgress();
+
+  document.querySelectorAll('.opt').forEach(btn => {
+    btn.classList.add('locked');
+    const l = btn.dataset.letter;
+    if(l === q.answer){
+      btn.classList.add('reveal-correct');
+    } else if(l === letter){
+      btn.classList.add('reveal-wrong');
+    } else {
+      btn.classList.add('dim');
+    }
+  });
+
+  document.getElementById('btnNext').disabled = false;
+  renderBlockmap();
+}
+
+function nextCard(){
+  pos++;
+  render();
+}
+
+function escapeHtml(str){
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+document.addEventListener('keydown', (e) => {
+  if(order.length === 0 || pos >= order.length) return;
+  const optBtns = Array.from(document.querySelectorAll('.opt'));
+  if(!currentSelection && /^[1-4]$/.test(e.key)){
+    const idx = parseInt(e.key,10) - 1;
+    if(optBtns[idx]) optBtns[idx].click();
+  } else if(currentSelection && (e.key === 'Enter' || e.key === ' ')){
+    e.preventDefault();
+    nextCard();
+  }
+});
+
+document.getElementById('btnShuffle').addEventListener('click', function(){
+  this.classList.toggle('active');
+  shuffleOrder();
+});
+document.getElementById('btnReview').addEventListener('click', function(){
+  reviewMode = !reviewMode;
+  this.classList.toggle('active', reviewMode);
+  buildOrder();
+  render();
+});
+document.getElementById('btnReset').addEventListener('click', () => {
+  if(confirm('Xoá toàn bộ tiến trình học? Hành động này không thể hoàn tác.')){
+    progress = {};
+    saveProgress();
+    reviewMode = false;
+    document.getElementById('btnReview').classList.remove('active');
+    buildOrder();
+    render();
+  }
+});
+
+async function init(){
+  loadProgress();
+  try{
+    const res = await fetch('questions.json');
+    ALL = await res.json();
+  }catch(e){
+    document.getElementById('cardArea').innerHTML = `
+      <div class="finish">
+        <p style="color:var(--red)">Không tải được questions.json.</p>
+        <p class="mono" style="font-size:12px;color:var(--text-faint)">
+          Nếu bạn mở file này trực tiếp (file://), trình duyệt có thể chặn việc tải JSON cục bộ.<br>
+          Hãy mở thư mục bằng một server cục bộ, ví dụ: <kbd>python -m http.server</kbd> rồi truy cập qua http://localhost.
+        </p>
+      </div>`;
+    return;
+  }
+  buildOrder();
+  render();
+}
+init();
+</script>
+</body>
+</html>
