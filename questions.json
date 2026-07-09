@@ -2318,5 +2318,20 @@
     "correct": [
       "Buổi tiệc ăn mừng (Celebration party)"
     ]
+  },
+  {
+    "id": 156,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Sau khi hoàn thành dự án, hoạt động nào được khuyến khích thực hiện cùng các bên liên quan để ăn mừng thành quả?",
+    "type": "single",
+    "options": [
+      "Buổi tiệc ăn mừng (Celebration party)",
+      "Họp kiểm điểm kỷ luật",
+      "Sa thải toàn bộ nhân sự dự án",
+      "Không cần hoạt động nào đặc biệt"
+    ],
+    "correct": [
+      "Buổi tiệc ăn mừng (Celebration party)"
+    ]
   }
 ]
