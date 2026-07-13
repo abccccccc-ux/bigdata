@@ -2322,16 +2322,460 @@
   {
     "id": 156,
     "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
-    "question": "Sau khi hoàn thành dự án, hoạt động nào được khuyến khích thực hiện cùng các bên liên quan để ăn mừng thành quả?",
+    "question": "Trong 5 giai đoạn/ tiến trình của quản lý dự án theo PMBOK, giai đoạn nào có thời gian thực hiện lâu nhất?",
     "type": "single",
     "options": [
-      "Buổi tiệc ăn mừng (Celebration party)",
-      "Họp kiểm điểm kỷ luật",
-      "Sa thải toàn bộ nhân sự dự án",
-      "Không cần hoạt động nào đặc biệt"
+      "Excecuting – Thực hiện",
+      "Initiation – Khởi tạo dự án",
+      "Monitoring and Controlling – Giám sát và điều khiển",
+      "Planning – Lập kế hoạch",
+      "Closing – Đóng"
     ],
     "correct": [
-      "Buổi tiệc ăn mừng (Celebration party)"
+      "Excecuting – Thực hiện"
     ]
+  },
+  {
+    "id": 157,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Hãy chọn các lĩnh vực, loại thông tin cần quản lý trong mỗi dự án?",
+    "type": "multiple",
+    "options": [
+      "Quản lý chất lượng",
+      "Quản lý nhân sự",
+      "Quản lý rủi ro",
+      "Quản lý giao tiếp",
+      "Quản lý thu mua"
+    ],
+    "correct": [
+      "Quản lý chất lượng",
+      "Quản lý nhân sự",
+      "Quản lý rủi ro",
+      "Quản lý giao tiếp",
+      "Quản lý thu mua"
+    ]
+  },
+  {
+    "id": 158,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Khởi tạo dự án",
+    "type": "multiple",
+    "options": [
+      "Thực hiện việc định nghĩa 1 dự án mới hoặc một phát sinh (hoặc trộn lẫn) mới của một dự án có sẵn",
+      "Cần xác định yêu cầu dự án",
+      "Cần xác định mức độ ưu tiên của dự án",
+      "Phân tích các yêu cầu đầu tư",
+      "Phân công trách nhiệm cho các bộ phận thực hiện"
+    ],
+    "correct": [
+      "Thực hiện việc định nghĩa 1 dự án mới hoặc một phát sinh (hoặc trộn lẫn) mới của một dự án có sẵn",
+      "Cần xác định yêu cầu dự án",
+      "Cần xác định mức độ ưu tiên của dự án",
+      "Phân tích các yêu cầu đầu tư"
+    ]
+  },
+  {
+    "id": 159,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Các nhân tố được vận dụng trong quản lý",
+    "type": "multiple",
+    "options": [
+      "Là chân lý và kết quả thông qua kinh nghiệm và học tập",
+      "Được đo lường kĩ năng bằng hành động",
+      "Là tài năng dựa trên bản năng và hành vi",
+      "Giúp nhận biết các rủi ro để có cách hành xử phù hợp"
+    ],
+    "correct": [
+      "Là chân lý và kết quả thông qua kinh nghiệm và học tập",
+      "Được đo lường kĩ năng bằng hành động",
+      "Là tài năng dựa trên bản năng và hành vi",
+      "Giúp nhận biết các rủi ro để có cách hành xử phù hợp"
+    ]
+  },
+  {
+    "id": 160,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Yếu tố điểm mạnh trong dự án là",
+    "type": "multiple",
+    "options": [
+      "Những việc doanh nghiệp bạn làm tốt",
+      "Những tố chất khiến bạn nổi bật hơn đối thủ",
+      "Nguồn lực nội bộ như kỹ năng nghề nghiệp, kiến thức chuyên môn",
+      "Các tài sản hữu hình như máy móc, thiết bị tiên tiến",
+      "Các tài sản vô hình như kỹ thuật độc quyền, bằng phát minh, sáng chế,…"
+    ],
+    "correct": [
+      "Những việc doanh nghiệp bạn làm tốt",
+      "Những tố chất khiến bạn nổi bật hơn đối thủ",
+      "Nguồn lực nội bộ như kỹ năng nghề nghiệp, kiến thức chuyên môn",
+      "Các tài sản hữu hình như máy móc, thiết bị tiên tiến",
+      "Các tài sản vô hình như kỹ thuật độc quyền, bằng phát minh, sáng chế,…"
+    ]
+  },
+  {
+    "id": 161,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Cần phải tạo một phần mềm với 2 phần tích hợp: lớp lõi và lớp vỏ. Trong nhóm nhân sự, một số người chỉ biết sử dụng Python, số còn lại chỉ biết dùng Java. Nhóm dự án quyết định tạm dừng và làm dự án khác. Đoạn mô tả cho biết nhóm đã giải quyết mâu thuẫn theo kiểu nào?",
+    "type": "single",
+    "options": [
+      "Phục tùng",
+      "Cạnh tranh",
+      "Tránh",
+      "Thỏa hiệp",
+      "Pha trộn, hợp tác"
+    ],
+    "correct": [
+      "Tránh"
+    ]
+  },
+  {
+    "id": 162,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Mô hình (Đầu vào – Công cụ và kỹ thuật – Đầu ra) có:",
+    "type": "multiple",
+    "options": [
+      "Đầu vào là danh sách các hành động",
+      "Công cụ và kỹ thuật để quyết định chuyên môn dựa trên việc ước lượng và phân tích",
+      "Đầu ra là thời lượng hành động",
+      "Phạm vi yêu cầu được xác định trong quá trình cập nhật tài liệu ở đầu ra"
+    ],
+    "correct": [
+      "Đầu vào là danh sách các hành động",
+      "Công cụ và kỹ thuật để quyết định chuyên môn dựa trên việc ước lượng và phân tích",
+      "Đầu ra là thời lượng hành động"
+    ]
+  },
+  {
+    "id": 163,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Hãy giải thích tại sao Ước lượng dự án ở giai đoạn đầu của dự án (Giới thiệu công việc/Business Talk) lại có độ chính xác thấp nhưng vẫn cần phải thực hiện?\nBusiness Talk → Collect Requirement → System Design",
+    "type": "single",
+    "options": [
+      "Vì thời gian chuẩn bị rất ngắn, mọi thông tin đều rất sơ lược.",
+      "Vì người thực hiện không phải là thành viên chủ chốt.",
+      "Vì giai đoạn đầu bàn về kinh doanh/business, không cần ước lượng."
+    ],
+    "correct": [
+      "Vì thời gian chuẩn bị rất ngắn, mọi thông tin đều rất sơ lược."
+    ]
+  },
+  {
+    "id": 164,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Công ty TCIOS đang thực hiện một dự án IT mới. Dự án có kế hoạch hoàn thành trong 12 tháng với tổng dự toán chi phí là 500 triệu VNĐ. Sau 6 tháng, công ty đã chi 250 triệu VNĐ và hoàn thành 40% tổng khối lượng công việc. Giả định chi phí và tiến độ đều tuyến tính. Chi phí dự kiến kết thúc cả dự án sẽ vượt ngân sách ban đầu bao nhiêu triệu VNĐ?",
+    "type": "short",
+    "answer": "125",
+    "options": []
+  },
+  {
+    "id": 165,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Công ty TCIOS đang thực hiện một dự án IT mới. Dự án có kế hoạch hoàn thành trong 12 tháng với tổng dự toán chi phí là 500 triệu VNĐ. Sau 6 tháng, công ty đã chi 250 triệu VNĐ và hoàn thành 40% tổng khối lượng công việc. Giả định chi phí và tiến độ đều tuyến tính. Cần thêm bao nhiêu tháng để hoàn thành so với kế hoạch ban đầu?",
+    "type": "short",
+    "answer": "3",
+    "options": []
+  },
+  {
+    "id": 166,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Công ty TCIOS đã xây dựng hệ thống nhận dạng ảnh Căn cước công dân, Thẻ sinh viên,… và bắt đầu chào bán dịch vụ. Trong buổi họp với khách hàng, TCIOS cam kết nếu cứ 10.000 ảnh nhận dạng sai 2 ảnh thì sẽ bồi thường 20 triệu đồng cho mỗi lần sai. Biên bản trên cho thấy TCIOS đang áp dụng kỹ thuật đối phó với rủi ro nào khi đối mặt với việc nhận dạng sai?",
+    "type": "single",
+    "options": [
+      "Avoid/ Tránh",
+      "Mitigrate/ Giảm",
+      "Accept/ Chấp nhận",
+      "Transfer/ Chuyển"
+    ],
+    "correct": [
+      "Accept/ Chấp nhận"
+    ]
+  },
+  {
+    "id": 167,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Trong kỹ năng giao tiếp, phương pháp trình bày D.E.S.C gợi ý yếu tố: Describe, Express, Specify, Choose (Consequence). Tuy nhiên đoạn hội thoại sau đây cách trình bày của Thành Nam bị thiếu 2 yếu tố gì?\nBoss: Giao cho Thành Nam phát triển 2 tính năng Z1 và Z2.\nThành Nam: Oh. Thủy đang phụ trách có mỗi chức năng X1. Em thì phụ trách cả 3 tính năng Y1, Y2, Y3. Vì vậy em không làm.\nBoss: (không thoải mái)",
+    "type": "multiple",
+    "options": [
+      "Thiếu Describe",
+      "Thiếu Express",
+      "Thiếu Specify",
+      "Thiếu Consequence"
+    ],
+    "correct": [
+      "Thiếu Specify",
+      "Thiếu Consequence"
+    ]
+  },
+  {
+    "id": 168,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Yếu tố cơ hội trong dự án là",
+    "type": "multiple",
+    "options": [
+      "Chưa ai cung cấp sản phẩm hay dịch vụ cụ thể này ra thị trường",
+      "Ít đối thủ cạnh tranh mạnh trong lĩnh vực",
+      "Nhu cầu mới nổi cho sản phẩm hoặc dịch vụ mà doanh nghiệp đã biết được",
+      "Quản lý dự án giỏi, có khả năng tuyển người trong thời gian ngắn",
+      "Lượng khách hàng trung thành, tạo tiền đề cho sự mở rộng và phát triển"
+    ],
+    "correct": [
+      "Chưa ai cung cấp sản phẩm hay dịch vụ cụ thể này ra thị trường",
+      "Ít đối thủ cạnh tranh mạnh trong lĩnh vực",
+      "Nhu cầu mới nổi cho sản phẩm hoặc dịch vụ mà doanh nghiệp đã biết được"
+    ]
+  },
+  {
+    "id": 169,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Công ty TCIOS phát triển một phần mềm được đặt riêng cho 1 khách hàng. Khi chuẩn bị hoàn thiện sản phẩm, TCIOS gửi phiên bản alpha 1 cho khách hàng để đánh giá và dùng thử, khách hàng gửi về 50 lỗi. TCIOS sửa rồi gửi lại phiên bản alpha 2 cho khách hàng dùng thử và khách gửi về 46 lỗi. Hỏi nguồn lực được sử dụng để khắc phục các lỗi nói trên thuộc giai đoạn nào của quản lý dự án?",
+    "type": "single",
+    "options": [
+      "Thực hiện",
+      "Giám sát và điều khiển",
+      "Khởi tạo dự án",
+      "Đóng",
+      "Lập kế hoạch"
+    ],
+    "correct": [
+      "Thực hiện"
+    ]
+  },
+  {
+    "id": 170,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Loại chi phí nào KHÔNG liên quan khi ước lượng chi phí phát triển phần mềm?",
+    "type": "single",
+    "options": [
+      "Chi phí máy móc thiết bị",
+      "Chi phí quảng cáo tiếp thị",
+      "Chi phí đào tạo kỹ năng liên quan cho các lập trình viên",
+      "Chi phí vận chuyển bàn giao sản phẩm"
+    ],
+    "correct": [
+      "Chi phí quảng cáo tiếp thị"
+    ]
+  },
+  {
+    "id": 171,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Công ty TCIOS thực hiện một dự án IT có 3 module BACK-END, FRONT-END và IOT. Thời gian ước lượng cho mỗi hoạt động là như sau:\nModule BACK-END: thời gian ước lượng tối thiểu là 5 ngày, thời gian ước lượng dự kiến là 7 ngày và thời gian ước lượng tối đa là 9 ngày\nModule FRONT-END: thời gian ước lượng tối thiểu là 4 ngày, thời gian ước lượng dự kiến là 6 ngày và thời gian ước lượng tối đa là 8 ngày\nModule IOT: thời gian ước lượng tối thiểu là 3 ngày, thời gian ước lượng dự kiến là 5 ngày và thời gian ước lượng tối đa là 7 ngày\nBiết rằng chi phí lao động là 500000 vnđ mỗi ngày. Hãy tính toán chi phí ước lượng của dự án này bằng phương pháp ước lượng 3 điểm (PERT). Lưu ý chỉ viết đáp án dạng số nguyên (đơn vị: vnđ).",
+    "type": "short",
+    "answer": "9000000",
+    "options": []
+  },
+  {
+    "id": 172,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Một cửa hàng bán quần áo đề nghị công ty TCIOS xây dựng cho họ website giới thiệu sản phẩm. Công ty nhận thấy rằng trước đây đã từng làm website quần áo với giá 74 triệu. Do ảnh hưởng của CoVid-19, TCIOS cân nhắc giảm giá rồi đề xuất chi phí cho dự án này là 68 triệu. Đây là kỹ thuật ước lượng nào?",
+    "type": "single",
+    "options": [
+      "Bottom-up/ Ước lượng chi tiết từ dưới lên",
+      "Analogous/ Ước lượng tương tự",
+      "Parametric/ Ước lượng tham số hiệu chỉnh",
+      "Three-point estimating/ PERT/ Ước lượng 3 điểm"
+    ],
+    "correct": [
+      "Analogous/ Ước lượng tương tự"
+    ]
+  },
+  {
+    "id": 173,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Kỹ năng lãnh đạo là",
+    "type": "multiple",
+    "options": [
+      "Đưa ra mục tiêu và tập hợp các cá nhân để hoàn thành mục tiêu đó",
+      "Tìm ra những nhân tố đặc thù",
+      "Định hướng về tương lai",
+      "Hợp nhất các thành viên"
+    ],
+    "correct": [
+      "Đưa ra mục tiêu và tập hợp các cá nhân để hoàn thành mục tiêu đó",
+      "Định hướng về tương lai",
+      "Hợp nhất các thành viên"
+    ]
+  },
+  {
+    "id": 174,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Trong kỹ năng giao tiếp, phương pháp trình bày D.E.S.C gợi ý yếu tố: Describe, Express, Specify, Choose (Consequence). Tuy nhiên đoạn hội thoại sau đây cách trình bày của Minh Đức bị thiếu 2 yếu tố gì?\nSếp: Minh Đức làm ngay và luôn 2 tính năng mới X1 và X2\nMinh Đức: Em bận quá. Sếp giao cho người khác đi. Em không làm\nSếp: (tức giận sa thải luôn)",
+    "type": "multiple",
+    "options": [
+      "Thiếu Describe",
+      "Thiếu Express",
+      "Thiếu Specify",
+      "Thiếu Consequence"
+    ],
+    "correct": [
+      "Thiếu Describe",
+      "Thiếu Express"
+    ]
+  },
+  {
+    "id": 175,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Tuyên ngôn dự án bao gồm",
+    "type": "multiple",
+    "options": [
+      "Mục đích",
+      "Các mục tiêu cụ thể",
+      "Các yêu cầu",
+      "Các mốc thời gian",
+      "Bản kế hoạch"
+    ],
+    "correct": [
+      "Mục đích",
+      "Các mục tiêu cụ thể",
+      "Các yêu cầu",
+      "Các mốc thời gian"
+    ]
+  },
+  {
+    "id": 176,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Sự phân lớp của thành công theo mức độ từ cao xuống thấp",
+    "type": "single",
+    "options": [
+      "Thành công về cơ hội phát triển – Thành công về kinh tế, lợi nhuận – Thành công về kinh nghiệm, tri thức – Thành công về chất lượng, giá thành và chuyển giao.",
+      "Thành công về cơ hội phát triển – Thành công về kinh nghiệm, tri thức – Thành công về kinh tế, lợi nhuận – Thành công về chất lượng, giá thành và chuyển giao",
+      "Thành công về kinh tế, lợi nhuận – Thành công về cơ hội phát triển – Thành công về chất lượng, giá thành và chuyển giao – Thành công về kinh nghiệm, tri thức",
+      "Thành công về kinh nghiệm, tri thức – Thành công về cơ hội phát triển – Thành công về kinh tế, lợi nhuận – Thành công về chất lượng, giá thành và chuyển giao"
+    ],
+    "correct": [
+      "Thành công về cơ hội phát triển – Thành công về kinh tế, lợi nhuận – Thành công về kinh nghiệm, tri thức – Thành công về chất lượng, giá thành và chuyển giao."
+    ]
+  },
+  {
+    "id": 177,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Tiểu dự án và dự án có đặc điểm nào",
+    "type": "multiple",
+    "options": [
+      "Đều có mục tiêu và kết quả đầu ra",
+      "Đều có phạm vi, nguồn nhân lực",
+      "Đều có lịch trình, chi phí",
+      "Ước lượng rủi ro sẽ được thực hiện ở tiểu dự án, phân tích rủi ro sẽ được thực hiện ở dự án"
+    ],
+    "correct": [
+      "Đều có mục tiêu và kết quả đầu ra",
+      "Đều có phạm vi, nguồn nhân lực",
+      "Đều có lịch trình, chi phí"
+    ]
+  },
+  {
+    "id": 178,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Lựa chọn mục tiêu của dự án dựa trên yếu tố",
+    "type": "multiple",
+    "options": [
+      "Điểm mạnh cần được làm nền tảng",
+      "Điểm yếu cần được sửa chữa, thay thế hoặc chấm dứt",
+      "Các cơ hội cần được tận dụng, ưu tiên và nắm bắt kịp thời",
+      "Các nguy cơ cần được lên phương án giải quyết"
+    ],
+    "correct": [
+      "Điểm mạnh cần được làm nền tảng",
+      "Điểm yếu cần được sửa chữa, thay thế hoặc chấm dứt",
+      "Các cơ hội cần được tận dụng, ưu tiên và nắm bắt kịp thời",
+      "Các nguy cơ cần được lên phương án giải quyết"
+    ]
+  },
+  {
+    "id": 179,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Cần phải tạo một phần mềm với 2 phần tích hợp: lớp lõi và lớp vỏ. Trong một nhóm nhân sự, một số người chỉ sử dụng Python, số còn lại chỉ biết Java. Nhóm dự án quyết định: Lựa chọn ngôn ngữ Java. Thành viên nào chưa lập trình Java thì tự học thêm rồi tham gia dự án. Đoạn mô tả cho biết nhóm đã giải quyết mâu thuẫn theo kiểu nào?",
+    "type": "single",
+    "options": [
+      "Phục tùng",
+      "Tránh",
+      "Thỏa hiệp",
+      "Cạnh tranh",
+      "Pha trộn, hợp tác"
+    ],
+    "correct": [
+      "Cạnh tranh"
+    ]
+  },
+  {
+    "id": 180,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Phát biểu nào đúng về người lãnh đạo và người quản lý",
+    "type": "multiple",
+    "options": [
+      "Người lãnh đạo hướng về tương lai còn người quản lý hướng về hiện tại",
+      "Người lãnh đạo chú trọng đến tầm nhìn còn người quản lý chú trọng về phần hỗ trợ",
+      "Lãnh đạo là sáng tạo, truyền cảm hứng còn quản lý là phân tích và gỡ rối",
+      "Lãnh đạo cần tư duy có cấu trúc, quản lý cần có tư duy tiến bộ"
+    ],
+    "correct": [
+      "Người lãnh đạo hướng về tương lai còn người quản lý hướng về hiện tại",
+      "Người lãnh đạo chú trọng đến tầm nhìn còn người quản lý chú trọng về phần hỗ trợ",
+      "Lãnh đạo là sáng tạo, truyền cảm hứng còn quản lý là phân tích và gỡ rối"
+    ]
+  },
+  {
+    "id": 181,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Kỹ năng quản lý là",
+    "type": "multiple",
+    "options": [
+      "Hiểu và kiểm soát các thành viên",
+      "Quản lý thành viên và nhiệm vụ cần thực hiện",
+      "Tuân theo các bước \"Plan-Do-Check-Act\"",
+      "Tìm ra đặc trưng ở các thành viên và khai thác chúng"
+    ],
+    "correct": [
+      "Hiểu và kiểm soát các thành viên",
+      "Quản lý thành viên và nhiệm vụ cần thực hiện",
+      "Tuân theo các bước \"Plan-Do-Check-Act\"",
+      "Tìm ra đặc trưng ở các thành viên và khai thác chúng"
+    ]
+  },
+  {
+    "id": 182,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Các mục tiêu của dự án",
+    "type": "multiple",
+    "options": [
+      "Được xác định và viết rõ ràng trong tuyên ngôn dự án",
+      "Các mục tiêu có sự hỗ trợ lẫn nhau",
+      "Mục tiêu là cụ thể và phải được thực hiện",
+      "Có mốc thời gian cụ thể"
+    ],
+    "correct": [
+      "Được xác định và viết rõ ràng trong tuyên ngôn dự án",
+      "Các mục tiêu có sự hỗ trợ lẫn nhau",
+      "Mục tiêu là cụ thể và phải được thực hiện",
+      "Có mốc thời gian cụ thể"
+    ]
+  },
+  {
+    "id": 183,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Chọn phát biểu đúng về quản lý dự án",
+    "type": "multiple",
+    "options": [
+      "Người quản lý dự án là trung tâm kết nối",
+      "Quản lý là một công việc toàn thời gian",
+      "Người quản lý dự án phải biết về vòng đời dự án",
+      "Vai trò của người quản lý dự án trong việc thực hiện dự án trong các vòng đời là khác nhau",
+      "Người lãnh đạo hay người quản lý phải nhận ra sự phức tạp của môi trường",
+      "Các dự án thất bại chủ yếu đến từ nguyên nhân quản lý"
+    ],
+    "correct": [
+      "Người quản lý dự án là trung tâm kết nối",
+      "Người quản lý dự án phải biết về vòng đời dự án",
+      "Vai trò của người quản lý dự án trong việc thực hiện dự án trong các vòng đời là khác nhau",
+      "Người lãnh đạo hay người quản lý phải nhận ra sự phức tạp của môi trường",
+      "Các dự án thất bại chủ yếu đến từ nguyên nhân quản lý"
+    ]
+  },
+  {
+    "id": 184,
+    "part": "Phần 7: NGÂN HÀNG CÂU HỎI SOICT",
+    "question": "Công ty TCIOS tính toán chi phí cho dự án web xephang.online. Họ xác định tình huống bình thường cần 200 triệu để làm sản phẩm. Với khung chi phí đó, TCIOS áp dụng phương pháp ước lượng chi phí 3 điểm (Three-point-estimating) để tính toán tiếp:\nNếu may mắn dự án kế thừa được nhiều từ dự án trước, họ sẽ giảm 50 triệu chi phí văn phòng và lương, và trích từ đó để tạo phần thưởng 30 triệu cho dev.\nNếu dự án bị muộn, họ phải chi trả thêm 80 triệu.\nHỏi chi phí dự án được xác định là bao nhiêu triệu?",
+    "type": "short",
+    "answer": "210",
+    "options": []
   }
 ]
